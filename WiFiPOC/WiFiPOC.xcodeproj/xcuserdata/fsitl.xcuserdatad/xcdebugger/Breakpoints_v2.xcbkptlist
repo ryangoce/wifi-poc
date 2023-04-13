@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7E885032-7A43-4091-A7F8-3731B8FB03A5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4EE774C-58E5-4855-B9EC-691A88B25A83"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WiFiPOC/Services/SSIDService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getSSIDs()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C4EE774C-58E5-4855-B9EC-691A88B25A83 - bfed668bbbca6e7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for WiFiPOC.SSIDService.getSSIDs() async -&gt; Swift.Array&lt;WiFiPOC.SSID&gt;"
+                  moduleName = "WiFiPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fsitl/code/wifi-poc/WiFiPOC/WiFiPOC/Services/SSIDService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "C4EE774C-58E5-4855-B9EC-691A88B25A83 - e6ebb7a31926448b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for WiFiPOC.SSIDService.getSSIDs() async -&gt; Swift.Array&lt;WiFiPOC.SSID&gt;"
+                  moduleName = "WiFiPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fsitl/code/wifi-poc/WiFiPOC/WiFiPOC/Services/SSIDService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "C4EE774C-58E5-4855-B9EC-691A88B25A83 - 5aaa3f2032cae7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for WiFiPOC.SSIDService.getSSIDs() async -&gt; Swift.Array&lt;WiFiPOC.SSID&gt;"
+                  moduleName = "WiFiPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fsitl/code/wifi-poc/WiFiPOC/WiFiPOC/Services/SSIDService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "C4EE774C-58E5-4855-B9EC-691A88B25A83 - 6537d50574697d91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.CheckedContinuation&lt;Swift.Array&lt;WiFiPOC.SSID&gt;, Swift.Never&gt;) -&gt; () in WiFiPOC.SSIDService.getSSIDs() async -&gt; Swift.Array&lt;WiFiPOC.SSID&gt;"
+                  moduleName = "WiFiPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fsitl/code/wifi-poc/WiFiPOC/WiFiPOC/Services/SSIDService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8DE2007-A45D-410A-B3D0-79B374A9FF09"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WiFiPOC/Services/SSIDService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getSSIDs()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F8DE2007-A45D-410A-B3D0-79B374A9FF09 - c38f45a7d43d8738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.String&gt;) -&gt; () in closure #1 (Swift.CheckedContinuation&lt;Swift.Array&lt;WiFiPOC.SSID&gt;, Swift.Never&gt;) -&gt; () in WiFiPOC.SSIDService.getSSIDs() async -&gt; Swift.Array&lt;WiFiPOC.SSID&gt;"
+                  moduleName = "WiFiPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fsitl/code/wifi-poc/WiFiPOC/WiFiPOC/Services/SSIDService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "F8DE2007-A45D-410A-B3D0-79B374A9FF09 - 1a01b12f4f9aea2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; WiFiPOC.SSID in closure #1 (Swift.Array&lt;Swift.String&gt;) -&gt; () in closure #1 (Swift.CheckedContinuation&lt;Swift.Array&lt;WiFiPOC.SSID&gt;, Swift.Never&gt;) -&gt; () in WiFiPOC.SSIDService.getSSIDs() async -&gt; Swift.Array&lt;WiFiPOC.SSID&gt;"
+                  moduleName = "WiFiPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fsitl/code/wifi-poc/WiFiPOC/WiFiPOC/Services/SSIDService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7106D2F-CC08-46B3-94F1-363CCBC16B5E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WiFiPOC/Services/SSIDService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getSSIDs()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

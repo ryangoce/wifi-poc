@@ -9,7 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                NavigationLink("Join a WiFi Network") {
+                    JoinWiFiNetwork()
+                }
+            }
+            .navigationBarTitle("Home", displayMode: .inline)
+        }
+        
+        
     }
 }
 

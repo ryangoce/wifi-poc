@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+@MainActor
+class SSIDViewModel: ObservableObject {
+    
+    @Published var ssids: [SSID] = []
+    
+    func getSSIDs() async {
+        self.ssids = await SSIDService().getSSIDs()
+    }
+}

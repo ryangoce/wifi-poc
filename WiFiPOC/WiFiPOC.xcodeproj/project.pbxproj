@@ -11,6 +11,12 @@
 		5E853D8229DFF337001B6D7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E853D8129DFF337001B6D7D /* ContentView.swift */; };
 		5E853D8429DFF338001B6D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E853D8329DFF338001B6D7D /* Assets.xcassets */; };
 		5E853D8729DFF338001B6D7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E853D8629DFF338001B6D7D /* Preview Assets.xcassets */; };
+		5E853D8F29DFF414001B6D7D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E853D8E29DFF414001B6D7D /* HomeView.swift */; };
+		5E853D9129DFF45D001B6D7D /* WiFiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E853D9029DFF45D001B6D7D /* WiFiList.swift */; };
+		5E853D9529DFFD42001B6D7D /* SSIDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E853D9429DFFD42001B6D7D /* SSIDViewModel.swift */; };
+		5E853D9829DFFE0B001B6D7D /* SSIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E853D9729DFFE0B001B6D7D /* SSIDService.swift */; };
+		5E853D9B29E00769001B6D7D /* JoinWiFiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E853D9A29E00769001B6D7D /* JoinWiFiNetwork.swift */; };
+		5E853D9E29E01479001B6D7D /* DataScannerViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E853D9D29E01479001B6D7D /* DataScannerViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		5E853D8129DFF337001B6D7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5E853D8329DFF338001B6D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E853D8629DFF338001B6D7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E853D8E29DFF414001B6D7D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5E853D9029DFF45D001B6D7D /* WiFiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiList.swift; sourceTree = "<group>"; };
+		5E853D9429DFFD42001B6D7D /* SSIDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDViewModel.swift; sourceTree = "<group>"; };
+		5E853D9729DFFE0B001B6D7D /* SSIDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDService.swift; sourceTree = "<group>"; };
+		5E853D9A29E00769001B6D7D /* JoinWiFiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinWiFiNetwork.swift; sourceTree = "<group>"; };
+		5E853D9C29E0128A001B6D7D /* WiFiPOC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WiFiPOC.entitlements; sourceTree = "<group>"; };
+		5E853D9D29E01479001B6D7D /* DataScannerViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,11 @@
 		5E853D7E29DFF337001B6D7D /* WiFiPOC */ = {
 			isa = PBXGroup;
 			children = (
+				5E853D9C29E0128A001B6D7D /* WiFiPOC.entitlements */,
+				5E853D9929DFFE6A001B6D7D /* Services */,
+				5E853D9329DFFD28001B6D7D /* ViewModel */,
+				5E853D8D29DFF3EF001B6D7D /* Views */,
 				5E853D7F29DFF337001B6D7D /* WiFiPOCApp.swift */,
-				5E853D8129DFF337001B6D7D /* ContentView.swift */,
 				5E853D8329DFF338001B6D7D /* Assets.xcassets */,
 				5E853D8529DFF338001B6D7D /* Preview Content */,
 			);
@@ -65,6 +81,34 @@
 				5E853D8629DFF338001B6D7D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5E853D8D29DFF3EF001B6D7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E853D8129DFF337001B6D7D /* ContentView.swift */,
+				5E853D8E29DFF414001B6D7D /* HomeView.swift */,
+				5E853D9029DFF45D001B6D7D /* WiFiList.swift */,
+				5E853D9A29E00769001B6D7D /* JoinWiFiNetwork.swift */,
+				5E853D9D29E01479001B6D7D /* DataScannerViewWrapper.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E853D9329DFFD28001B6D7D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E853D9429DFFD42001B6D7D /* SSIDViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5E853D9929DFFE6A001B6D7D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5E853D9729DFFE0B001B6D7D /* SSIDService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E853D9529DFFD42001B6D7D /* SSIDViewModel.swift in Sources */,
+				5E853D9129DFF45D001B6D7D /* WiFiList.swift in Sources */,
+				5E853D8F29DFF414001B6D7D /* HomeView.swift in Sources */,
 				5E853D8229DFF337001B6D7D /* ContentView.swift in Sources */,
+				5E853D9B29E00769001B6D7D /* JoinWiFiNetwork.swift in Sources */,
 				5E853D8029DFF337001B6D7D /* WiFiPOCApp.swift in Sources */,
+				5E853D9829DFFE0B001B6D7D /* SSIDService.swift in Sources */,
+				5E853D9E29E01479001B6D7D /* DataScannerViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,12 +314,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WiFiPOC/WiFiPOC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WiFiPOC/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R92Q525ZU;
+				DEVELOPMENT_TEAM = X6JHPY9CN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app would like to use your camera to scan codes and text.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -280,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryangoce.WiFiPOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryangoce.WiFiPOCiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -293,12 +345,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WiFiPOC/WiFiPOC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WiFiPOC/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R92Q525ZU;
+				DEVELOPMENT_TEAM = X6JHPY9CN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app would like to use your camera to scan codes and text.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,7 +363,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryangoce.WiFiPOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryangoce.WiFiPOCiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

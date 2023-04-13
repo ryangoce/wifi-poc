@@ -1,5 +1,5 @@
 //
-//  DataScannerView.swift
+//  DataScannerViewWrapper.swift
 //  WiFiPOC
 //
 //  Created by FSITL251 on 4/7/23.
@@ -8,105 +8,110 @@
 import SwiftUI
 import VisionKit
 
-struct DataScannerView: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
-        <#code#>
-    }
+struct DataScannerViewWrapper: UIViewControllerRepresentable {
+    var onDismiss: ((_ ssid: String, _ password: String) -> Void)?
+    var vc: DataScannerViewController?
     
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
+
+    }
+
     func makeUIViewController(context: Context) -> DataScannerViewController {
-        
-        let scanner = DataScannerViewController(
+        let dataScannerViewController = DataScannerViewController(
           recognizedDataTypes: [
-            .barcode(
-              symbologies: [
-                .ean13
-              ]),
-            .text(languages: ["en"])
+            .barcode(symbologies: [.qr])
           ],
           isGuidanceEnabled: true,
-          isHighlightingEnabled: false
+          isHighlightingEnabled: true
         )
-        
-        scanner.delegate = context.coordinator
-        
-        let tvc = UITableViewController()
-                tvc.tableView.delegate = context.coordinator
-                tvc.tableView.dataSource = context.coordinator
 
-                tvc.tableView.rowHeight = UITableView.automaticDimension
-                tvc.tableView.estimatedRowHeight = UITableView.automaticDimension
-                tvc.tableView.separatorStyle = .none
-                tvc.tableView.allowsSelection = false
-                tvc.tableView.allowsSelectionDuringEditing = true
-                tvc.tableView.allowsMultipleSelectionDuringEditing = true
+        dataScannerViewController.delegate = context.coordinator
+        try? dataScannerViewController.startScanning()
+//        self.vc = dataScannerViewController
 
-                self.vc = tvc
-                return tvc
+        return dataScannerViewController
     }
-    
+
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        <#code#>
+
     }
-    
-    func makeCoordinator() -> () {
-        <#code#>
-    }
-    
+
     typealias UIViewControllerType = DataScannerViewController
-    
+
     // MARK: - Coordinator
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
 
         // MARK: Properties and initializer
-        private let parent: CommentsTableViewWrapper
+        private let parent: DataScannerViewWrapper
 
-        init(_ parent: CommentsTableViewWrapper) {
+        init(_ parent: DataScannerViewWrapper) {
             self.parent = parent
         }
 
-        // MARK: UITableViewDelegate and DataSource methods
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return parent.comments.count
+        func dataScanner(
+          _ dataScanner: DataScannerViewController,
+          didAdd addedItems: [RecognizedItem],
+          allItems: [RecognizedItem]
+        ) {
+//            debugPrint("dataScanner")
         }
 
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            print(indexPath)
-
-            return createCommentCell(indexPath, tableView)
+        func dataScanner(
+          _ dataScanner: DataScannerViewController,
+          didUpdate updatedItems: [RecognizedItem],
+          allItems: [RecognizedItem]
+        ) {
+//            debugPrint("dataScanner")
         }
 
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            UITableView.automaticDimension
+        func dataScanner(
+          _ dataScanner: DataScannerViewController,
+          didRemove removedItems: [RecognizedItem],
+          allItems: [RecognizedItem]
+        ) {
+//            debugPrint("dataScanner")
         }
 
-        var cellHeights = [IndexPath: CGFloat]()
-
-        func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            cellHeights[indexPath] = cell.frame.size.height
-        }
-
-        func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-            return cellHeights[indexPath] ?? UITableView.automaticDimension
-        }
-
-        // MARK: - Private helpers
-        fileprivate func createCommentCell(_ indexPath: IndexPath, _ tableView: UITableView) -> UITableViewCell {
-            let comment = parent.comments[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DebugCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "DebugCell")
-
-            cell.textLabel!.numberOfLines = 0
-            cell.textLabel!.lineBreakMode = .byCharWrapping
-            cell.textLabel!.text = comment
-            return cell
+        func dataScanner(
+          _ dataScanner: DataScannerViewController,
+          didTapOn item: RecognizedItem
+        ) {
+            
+            switch item {
+            case .barcode(let code):
+                guard let urlString = code.payloadStringValue else { return }
+                guard let url = URL(string: urlString) else { return }
+                
+                let components:NSURLComponents? = NSURLComponents(url: url, resolvingAgainstBaseURL: true)
+                
+                var queryItems: [String : String] = [:]
+                for item in components?.queryItems ?? [] {
+                    queryItems[item.name] = item.value?.removingPercentEncoding
+                }
+                
+                guard let ssid = queryItems["ssid"] else { return }
+                guard let password = queryItems["password"] else { return }
+                
+                self.parent.onDismiss?(ssid, password)
+            default:
+                debugPrint("Unexpected item")
+            }
+        
+            
+            
         }
     }
-    
+
 }
 
 
 
-struct DataScannerView_Previews: PreviewProvider {
+struct DataScannerViewWrapper_Previews: PreviewProvider {
     static var previews: some View {
-        DataScannerView()
+        DataScannerViewWrapper()
     }
 }

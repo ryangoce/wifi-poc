@@ -6,10 +6,27 @@
 //
 
 import SwiftUI
+import NetworkExtension
 
 struct WiFiList: View {
+    @StateObject var vm = SSIDViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(vm.ssids) { ssid in
+                Text(ssid.name)
+            }
+        }
+        .task {
+            await vm.getSSIDs()
+//            NEHotspotConfigurationManager.shared.getConfiguredSSIDs {
+//            (ssidsArray) in
+//                for ssid in ssidsArray {
+//                    print(ssid)
+//                }
+//            }
+        }
+        
     }
 }
 
